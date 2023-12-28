@@ -1,10 +1,16 @@
 package main
 
 import (
-    "fmt"
+	"log"
+	"os"
 )
 
 func main() {
-    fmt.Println("go solush")
+    puzzleInput, err := os.ReadFile("./input.txt")
+    if err != nil {
+        log.Fatal("Panicked reading file", err)
+    }
+
+    os.Stdout.Write(puzzleInput)
 }
 
